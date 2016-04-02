@@ -2,6 +2,7 @@
 
 // Declare app level module which depends on filters, and services
 angular.module('myApp', [
+    'ngMaterial',
     'myApp.config',
     'myApp.security',
     'myApp.home',

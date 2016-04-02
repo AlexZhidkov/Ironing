@@ -18,8 +18,5 @@ describe('myApp.login', function() {
       expect(typeof $scope.login).toBe('function');
     });
 
-    it('should define createAccount function', function() {
-      expect(typeof $scope.createAccount).toBe('function');
-    });
   });
 });

@@ -1,24 +1,24 @@
+<section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+    <h1>Sign in</h1>
 
-<h2>Login Page</h2>
-
-<form>
-    <label>
-        <span>email</span>
-        <input type="text" ng-model="email" />
-    </label>
-    <label>
-        <span>password</span>
-        <input type="password" ng-model="pass" />
-    </label>
-    <label ng-cloak ng-show="createMode">
-        <span>confirm pass</span>
-        <input type="password" ng-model="confirm" />
-    </label>
-    <button ng-click="login(email, pass)" ng-hide="createMode">Log In</button>
-    <button ng-click="createMode = true" ng-hide="createMode">Register</button>
-    <button ng-cloak ng-show="createMode" ng-click="createAccount()">Create Account</button>
-    <button ng-cloak ng-show="createMode" ng-click="createMode = false">Cancel</button>
+    <md-button class="md-raised" ng-click="signInWithProvider('google')" type="button">
+        Google
+    </md-button>
+    <md-button class="md-raised" ng-click="signInWithProvider('facebook')" type="button">
+        Facebook
+    </md-button>
+    <md-button class="md-raised" ng-click="signInWithProvider('twitter')" type="button">
+        Twitter
+    </md-button>
+    <md-button class="md-raised" ng-click="signInAsGuest()" type="button">
+        Guest
+    </md-button>
+    <md-button class="md-raised" ng-click="callPhone()" type="button">
+        <md-icon class="step md-font-icon-phone material-icons">phone</md-icon> Call
+    </md-button>
+    <md-button class="md-raised" ng-click="sendSms()" type="button">
+        <md-icon class="icon material-icons">message</md-icon> SMS
+    </md-button>
 
     <p ng-show="err" class="error">{{err}}</p>
-</form>
-
+</section>
