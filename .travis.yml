@@ -4,7 +4,6 @@ dist: trusty
 language: node_js
 node_js:
   - 5.6
-  - stable
 
 before_install:
   - export CHROME_BIN=chromium-browser
