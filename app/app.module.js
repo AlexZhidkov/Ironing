@@ -14,15 +14,12 @@
          * We could place these under every feature area,
          * but this is easier to maintain.
          */
+        'ngMaterial',        
         'app.core',
-        //'app.widgets',
 
         /*
          * Feature areas
          */
-        //'app.avengers',
-        //'app.dashboard',
-        'ngMaterial',
         'app.config',
         'app.security',
         'app.home',

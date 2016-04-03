@@ -1,8 +1,8 @@
-<div ng-controller="Shell as vm" layout="column" style="height:500px;" ng-cloak>
+<div ng-controller="Shell as vm" layout="column" layout-fill ng-cloak>
     <section layout="row" flex>
         <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
             <md-toolbar class="md-theme-indigo">
-                <h1 class="md-toolbar-tools">Menu</h1>
+                <h1 class="md-toolbar-tools">Navigate to</h1>
             </md-toolbar>
             <md-content layout-padding>
                 <p hide-md show-gt-md>
@@ -46,9 +46,6 @@
 
                 <p>
                     The left sidenav will 'lock open' on a medium (>=960px wide) device.
-                </p>
-                <p>
-                    The right sidenav will focus on a specific child element.
                 </p>
 
             </div>
