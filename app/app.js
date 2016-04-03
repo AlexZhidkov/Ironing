@@ -1,14 +1,14 @@
 'use strict';
 
 // Declare app level module which depends on filters, and services
-angular.module('myApp', [
+angular.module('app', [
     'ngMaterial',
-    'myApp.config',
-    'myApp.security',
-    'myApp.home',
-    'myApp.account',
-    'myApp.chat',
-    'myApp.login'
+    'app.config',
+    'app.security',
+    'app.home',
+    'app.account',
+    'app.chat',
+    'app.login'
   ])
   
   .config(['$routeProvider', function ($routeProvider) {
