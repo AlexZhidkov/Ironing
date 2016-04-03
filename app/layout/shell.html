@@ -1,18 +1,58 @@
-<div data-ng-controller="Shell as vm">
+<div ng-controller="Shell as vm" layout="column" style="height:500px;" ng-cloak>
+    <section layout="row" flex>
+        <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
+            <md-toolbar class="md-theme-indigo">
+                <h1 class="md-toolbar-tools">Menu</h1>
+            </md-toolbar>
+            <md-content layout-padding>
+                <p hide-md show-gt-md>
+                    <md-list>
+                        <md-list-item>
+                            <a class="md-button md-ink-ripple" href="" ng-click="signOut()">Sign Out</a>
+                        </md-list-item>
+                        <md-list-item>
+                            <a class="md-button md-ink-ripple" href="/orderform">Order Form</a>
+                        </md-list-item>
+                        <md-list-item>
+                            <a class="md-button md-ink-ripple" href="/orders">Orders</a>
+                        </md-list-item>
+                        <md-list-item>
+                            <a class="md-button md-ink-ripple" href="/clients">Clients</a>
+                        </md-list-item>
+                        <md-list-item>
+                            <a class="md-button md-ink-ripple" href="/staff">Staff</a>
+                        </md-list-item>
+                        <md-list-item>
+                            <a class="md-button md-ink-ripple" href="/prices">Prices</a>
+                        </md-list-item>
+                        <md-list-item>
+                            <a class="md-button md-ink-ripple" href="/profile">Profile</a>
+                        </md-list-item>
+                    </md-list>
+                </p>
+            </md-content>
+        </md-sidenav>
+        <md-content flex layout-padding>
+            <md-toolbar class="md-theme-indigo">
+                <div class="md-toolbar-tools">
+                    <md-button ng-click="vm.toggleLeft()" class="md-icon-button md-primary" hide-gt-md aria-label="Menu">
+                        <i class="material-icons">menu</i>
+                    </md-button>
+                    <h1 class="md-flex">{{vm.title}}</h1>
+                </div>
+            </md-toolbar>
 
-    <header class="clearfix">
-        <div data-ng-include="'app/layout/topnav.html'"></div>
-    </header>
-    <section id="content" class="content">
-        <div data-ng-include="'app/layout/sidebar.html'"></div>
+            <div layout="column" layout-fill layout-align="top center">
 
-        <div data-ng-view class="shuffle-animation"></div>
+                <p>
+                    The left sidenav will 'lock open' on a medium (>=960px wide) device.
+                </p>
+                <p>
+                    The right sidenav will focus on a specific child element.
+                </p>
 
-
-        <!--spinner here
-
-            <div class="page-spinner-message overlay-message">{{vm.busyMessage}}</div>
-            
-            -->
+            </div>
+            <div flex></div>
+        </md-content>
     </section>
 </div>

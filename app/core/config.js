@@ -4,8 +4,8 @@
     var core = angular.module('app.core');
 
     var config = {
-        appErrorPrefix: '[NG-Modular Error] ', //Configure the exceptionHandler decorator
-        appTitle: 'Angular Modular Demo',
+        appErrorPrefix: '[WLI Error] ', //Configure the exceptionHandler decorator
+        appTitle: 'We Love Ironing',
         version: '1.0.0'
     };
 
