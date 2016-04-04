@@ -14,7 +14,7 @@
          * We could place these under every feature area,
          * but this is easier to maintain.
          */
-        'ngMaterial',        
+        'ngMaterial',
         'app.core',
 
         /*
@@ -25,8 +25,9 @@
         'app.home',
         'app.account',
         'app.chat',
+        'app.layout',
         'app.login',
-        'app.layout'
+        'app.orderForm'
     ])
 
         .config(['$routeProvider', function($routeProvider) {

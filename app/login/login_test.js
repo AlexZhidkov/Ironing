@@ -5,12 +5,12 @@ describe('app.login', function() {
     module('app.login');
   });
 
-  describe('LoginCtrl', function() {
+  describe('Login', function() {
     var loginCtrl, $scope;
     beforeEach(function() {
       inject(function($controller) {
         $scope = {};
-        loginCtrl = $controller('LoginCtrl', {$scope: $scope});
+        loginCtrl = $controller('Login', {$scope: $scope});
       });
     });
 
