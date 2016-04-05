@@ -32,7 +32,7 @@
 
         .config(['$routeProvider', function($routeProvider) {
             $routeProvider.otherwise({
-                redirectTo: '/home'
+                redirectTo: '/orderForm'
             });
         }])
 

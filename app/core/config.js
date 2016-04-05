@@ -3,6 +3,14 @@
 
     var core = angular.module('app.core');
 
+    core.config(toastrConfig);
+
+    /* @ngInject */
+    function toastrConfig(toastr) {
+        toastr.options.timeOut = 4000;
+        toastr.options.positionClass = 'toast-top-right';
+    }
+
     var config = {
         appErrorPrefix: '[WLI Error] ', //Configure the exceptionHandler decorator
         appTitle: 'We Love Ironing',
@@ -22,7 +30,7 @@
 
         // Configure the common route provider
         routehelperConfigProvider.config.$routeProvider = $routeProvider;
-        routehelperConfigProvider.config.docTitle = 'NG-Modular: ';
+        routehelperConfigProvider.config.docTitle = 'WLI: ';
         var resolveAlways = { /* @ngInject */
             ready: function(dataservice) {
                 return dataservice.ready();

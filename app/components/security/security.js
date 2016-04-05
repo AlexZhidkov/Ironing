@@ -9,7 +9,7 @@
 
     .config(['$routeProvider', function ($routeProvider) {
       // routes which are not in our map are redirected to /home
-      //$routeProvider.otherwise({redirectTo: '/home'});
+      $routeProvider.otherwise({redirectTo: '/orderForm'});
     }])
 
   /**

@@ -3,9 +3,30 @@
 
     var app = angular.module('app.orderForm', ['firebase.utils', 'firebase.auth', 'ngRoute']);
 
-    app.controller('OrderForm', ['$scope', 'Auth', '$location', 'fbutil', function($scope, Auth, $location, fbutil) {
-        var vm = this;
-    }]);
+    app.controller('OrderForm', ['$scope', 'Auth', '$location', 'fbutil', 'user', 'logger',
+        function($scope, Auth, $location, fbutil, user, logger) {
+            var vm = this;
+            vm.submitOrder = submitOrder;
+
+            function submitOrder() {
+                fbutil.ref('orders').push({
+                    'clientId': user.uid,
+                    'name': vm.name,
+                    'email': vm.email,
+                    'phone': vm.phone,
+                    'address': vm.address,
+                    'message': vm.message
+                }, function (error) {
+                    if(error){
+                        logger.error('Order failed', error, 'Error');
+                    }
+                    else {
+                        logger.success('New order submitted', vm, 'Saved');
+                    }
+                });
+            }
+        }
+    ]);
 
     app.config(['$routeProvider', function($routeProvider) {
         $routeProvider.when('/orderForm', {

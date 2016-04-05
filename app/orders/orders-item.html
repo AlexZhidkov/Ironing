@@ -1,0 +1,46 @@
+<div ng-cloak>
+    <md-content class="md-padding" layout-xs="column" layout="row">
+        <div flex-xs flex-gt-xs="50" layout="column">
+            <md-card>
+                <md-card-header>
+                    <md-card-avatar>
+                        <img class="md-user-avatar" src={{vm.imageUrl}} alt="" />
+                    </md-card-avatar>
+                </md-card-header>
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-headline">{{vm.name}}</span>
+                    </md-card-title-text>
+                </md-card-title>
+                <md-card-content>
+                    <p>
+                        {{vm.phone}}, {{vm.address}}
+                    </p>
+                    <p>
+                        {{vm.message}}
+                    </p>
+                    <p>
+                        Status: {{vm.status}}, Assigned To: {{vm.assignedTo}}
+                    </p>
+                </md-card-content>
+                <md-card-actions layout="row" layout-align="end center">
+                    <md-menu>
+                        <md-button ng-click="vm.openMenu($mdOpenMenu, $event)">Assign Driver</md-button>
+                        <md-menu-content width="4">
+                            <md-menu-item>
+                                <md-button ng-click="vm.assignDriver('Driver One')">
+                                    Driver One
+                                </md-button>
+                            </md-menu-item>
+                            <md-menu-item>
+                                <md-button ng-click="vm.assignDriver('Driver Two')">
+                                    Driver Two
+                                </md-button>
+                            </md-menu-item>
+                        </md-menu-content>
+                    </md-menu>
+                </md-card-actions>
+            </md-card>
+        </div>
+    </md-content>
+</div>

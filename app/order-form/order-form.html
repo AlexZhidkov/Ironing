@@ -1,1 +1,31 @@
-Order Form HTML here
+<div layout="column" ng-cloak class="md-inline-form">
+    <md-content layout-padding>
+        <div>
+            <form name="orderForm">
+                <md-input-container class="md-block">
+                    <label>Name</label>
+                    <input ng-model="vm.name">
+                </md-input-container>
+                <md-input-container class="md-block">
+                    <label>Email</label>
+                    <input ng-model="vm.email">
+                </md-input-container>
+                <md-input-container class="md-block">
+                    <label>Phone</label>
+                    <input ng-model="vm.phone">
+                </md-input-container>
+                <md-input-container class="md-block">
+                    <label>Address</label>
+                    <input ng-model="vm.address">
+                </md-input-container>
+                <md-input-container class="md-block">
+                    <label>Message</label>
+                    <textarea ng-model="vm.message" rows="5" md-select-on-focus></textarea>
+                </md-input-container>
+                <section>
+                    <md-button class="md-raised md-primary" ng-click="vm.submitOrder()">Submit</md-button>
+                </section>
+            </form>
+        </div>
+    </md-content>
+</div>
