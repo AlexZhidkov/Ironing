@@ -36,10 +36,18 @@
             });
         }])
 
-        .run(['$rootScope', 'Auth', function($rootScope, Auth) {
+        .run(['$rootScope', '$location', 'Auth', 'loginRedirectPath', 'orderFormRedirectPath', 
+        function($rootScope, $location, Auth, loginRedirectPath, orderFormRedirectPath) {
             // track status of authentication
             Auth.$onAuth(function(user) {
-                $rootScope.loggedIn = !!user;
+                $rootScope.loggedIn = !!user;                
+                if ($rootScope.loggedIn) {
+                    $location.path(orderFormRedirectPath);
+                }
+                else {
+                    $location.path(loginRedirectPath);                    
+                }
+                
             });
         }]);
 

@@ -20,9 +20,7 @@
         }
         
         function signOut() {
-            this.loggedIn = null;
             fbutil.ref().unauth();
-            $location.path(loginRedirectPath);
         }
 
         /**

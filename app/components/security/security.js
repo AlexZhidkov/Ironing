@@ -58,7 +58,7 @@
 
         function check(user) {
           if (!user && authRequired($location.path())) {
-            console.log('check failed', user, $location.path()); //debug
+            //console.log('check failed', user, $location.path()); //debug
             $location.path(loginRedirectPath);
           }
         }
