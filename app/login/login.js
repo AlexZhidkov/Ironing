@@ -16,7 +16,8 @@
                 if (error) {
                     $scope.err = errMessage(error);
                 } else {
-                    $location.path('/account');
+                    console.log(authData);
+                    $location.path('/orderForm');
                 }
             });
         }
@@ -27,7 +28,7 @@
                 if (error) {
                     $scope.err = errMessage(error);
                 } else {
-                    $location.path('/account');
+                    $location.path('/orderForm');
                 }
             });
         }

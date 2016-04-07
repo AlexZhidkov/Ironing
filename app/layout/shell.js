@@ -5,13 +5,13 @@
         .module('app.layout')
         .controller('Shell', Shell);
 
-    Shell.$inject = ['$scope', '$timeout', '$mdSidenav', 'config', 'logger'];
+    Shell.$inject = ['$scope', '$timeout', '$mdSidenav', 'config', 'logger', 'fbutil', '$location', 'loginRedirectPath'];
 
-    function Shell($scope, $timeout, $mdSidenav, config, logger) {
+    function Shell($scope, $timeout, $mdSidenav, config, logger, fbutil, $location, loginRedirectPath) {
         /*jshint validthis: true */
-        var vm = this;
-
+        var vm = this;        
         vm.title = config.appTitle;
+        vm.signOut = signOut;
         vm.toggleLeft = buildDelayedToggler('left');
 
         activate();
@@ -19,6 +19,12 @@
         function activate() {
         }
         
+        function signOut() {
+            this.loggedIn = null;
+            fbutil.ref().unauth();
+            $location.path(loginRedirectPath);
+        }
+
         /**
          * Supplies a function that will continue to operate until the
          * time is up.

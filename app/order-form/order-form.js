@@ -29,7 +29,7 @@
     ]);
 
     app.config(['$routeProvider', function($routeProvider) {
-        $routeProvider.when('/orderForm', {
+        $routeProvider.whenAuthenticated('/orderForm', {
             templateUrl: 'order-form/order-form.html',
             controller: 'OrderForm',
             controllerAs: 'vm',

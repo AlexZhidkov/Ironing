@@ -64,7 +64,7 @@
         }
 
         function authRequired(path) {
-          console.log('authRequired?', path, securedRoutes.indexOf(path)); //debug
+          //console.log('authRequired?', path, securedRoutes.indexOf(path)); //debug
           return securedRoutes.indexOf(path) !== -1;
         }
       }
