@@ -17,7 +17,7 @@
             {
                 url: '/orderform',
                 config: {
-                    templateUrl: 'order-form/order-form.html',
+                    templateUrl: 'app/order-form/order-form.html',
                     title: 'orderForm',
                     settings: {
                         nav: 4,
