@@ -36,19 +36,27 @@
             });
         }])
 
-        .run(['$rootScope', '$location', 'Auth', 'loginRedirectPath', 'orderFormRedirectPath', 
-        function($rootScope, $location, Auth, loginRedirectPath, orderFormRedirectPath) {
-            // track status of authentication
-            Auth.$onAuth(function(user) {
-                $rootScope.loggedIn = !!user;                
-                if ($rootScope.loggedIn) {
-                    $location.path(orderFormRedirectPath);
-                }
-                else {
-                    $location.path(loginRedirectPath);                    
-                }
-                
-            });
-        }]);
+        .run(['$rootScope', '$location', 'Auth', 'loginRedirectPath', 'orderFormRedirectPath', 'fbutil', '$firebaseObject',
+            function($rootScope, $location, Auth, loginRedirectPath, orderFormRedirectPath, fbutil, $firebaseObject) {
+                var unbind;
+                // track status of authentication
+                Auth.$onAuth(function(user) {
+                    $rootScope.loggedIn = !!user;
+                    if ($rootScope.loggedIn) {
+                        var profile = $firebaseObject(fbutil.ref('users', user.uid));
+                        profile.$bindTo($rootScope, 'profile').then(function(ub) {
+                            unbind = ub;
+                        });
+
+                        $location.path(orderFormRedirectPath);
+                    }
+                    else {
+                        if (unbind) { unbind(); }
+                        $location.path(loginRedirectPath);
+                    }
+
+                });
+
+            }]);
 
 })();

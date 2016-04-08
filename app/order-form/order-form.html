@@ -4,19 +4,19 @@
             <form name="orderForm">
                 <md-input-container class="md-block">
                     <label>Name</label>
-                    <input ng-model="vm.name">
+                    <input ng-model="vm.profile.name">
                 </md-input-container>
                 <md-input-container class="md-block">
                     <label>Email</label>
-                    <input ng-model="vm.email">
+                    <input ng-model="vm.profile.email">
                 </md-input-container>
                 <md-input-container class="md-block">
                     <label>Phone</label>
-                    <input ng-model="vm.phone">
+                    <input ng-model="vm.profile.phone">
                 </md-input-container>
                 <md-input-container class="md-block">
                     <label>Address</label>
-                    <input ng-model="vm.address">
+                    <input ng-model="vm.profile.address">
                 </md-input-container>
                 <md-input-container class="md-block">
                     <label>Message</label>
@@ -29,3 +29,4 @@
         </div>
     </md-content>
 </div>
+<pre>{{profile|json}}</pre>
