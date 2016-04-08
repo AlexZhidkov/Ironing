@@ -30,7 +30,7 @@
 
     app.config(['$routeProvider', function($routeProvider) {
         $routeProvider.when('/orderForm', {
-            templateUrl: 'order-form/order-form.html',
+            templateUrl: 'app/order-form/order-form.html',
             controller: 'OrderForm',
             controllerAs: 'vm',
             resolve: {

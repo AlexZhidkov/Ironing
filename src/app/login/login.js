@@ -48,7 +48,7 @@
     
     app.config(['$routeProvider', function($routeProvider) {
         $routeProvider.when('/login', {
-            templateUrl: 'login/login.html',
+            templateUrl: 'app/login/login.html',
             controller: 'Login',
             resolve: {
                 // forces the page to wait for this promise to resolve before controller is loaded

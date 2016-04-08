@@ -51,7 +51,7 @@
                     angular.extend(route.config.resolve || {}, routehelperConfig.config.resolveAlways);
                 $routeProvider.when(route.url, route.config);
             });
-            $routeProvider.otherwise({redirectTo: '/'});
+            // $routeProvider.otherwise({redirectTo: '/'});
         }
 
         function handleRoutingErrors() {

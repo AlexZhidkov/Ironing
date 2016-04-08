@@ -18,7 +18,7 @@
             {
                 url: '/login',
                 config: {
-                    templateUrl: 'login/login.html',
+                    templateUrl: 'app/login/login.html',
                     controller: 'Login',
                     controllerAs: 'vm',
                     title: 'login',
