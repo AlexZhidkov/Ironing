@@ -3,19 +3,19 @@
 
     var app = angular.module('app.orderForm', ['firebase.utils', 'firebase.auth', 'ngRoute']);
 
-    app.controller('OrderForm', ['$scope', 'Auth', '$location', 'fbutil', 'user', 'logger',
-        function($scope, Auth, $location, fbutil, user, logger) {
+    app.controller('OrderForm', ['$rootScope', 'Auth', '$location', 'fbutil', 'user', 'logger',
+        function($rootScope, Auth, $location, fbutil, user, logger) {
             var vm = this;
-            //vm.profile = profile;
+            vm.profile = $rootScope.profile;
             vm.submitOrder = submitOrder;
 
             function submitOrder() {
                 fbutil.ref('orders').push({
                     'clientId': user.uid,
-                    'name': vm.name,
-                    'email': vm.email,
-                    'phone': vm.phone,
-                    'address': vm.address,
+                    'name': $rootScope.profile.name,
+                    'email': $rootScope.profile.email,
+                    'phone': $rootScope.profile.phone,
+                    'address': $rootScope.profile.address,
                     'message': vm.message
                 }, function(error) {
                     if (error) {
@@ -25,7 +25,6 @@
                         logger.success('New order submitted', vm, 'Saved');
                     }
                 });
-                updateUserFromOrder();
             }
 
         }
