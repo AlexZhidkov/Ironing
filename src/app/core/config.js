@@ -31,10 +31,7 @@
         // Configure the common route provider
         routehelperConfigProvider.config.$routeProvider = $routeProvider;
         routehelperConfigProvider.config.docTitle = 'WLI: ';
-        var resolveAlways = { /* @ngInject */
-            ready: function(dataservice) {
-                return dataservice.ready();
-            }
+        var resolveAlways = {
             // ready: ['dataservice', function (dataservice) {
             //    return dataservice.ready();
             // }]
