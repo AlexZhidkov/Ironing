@@ -14,8 +14,8 @@ describe('app.login', function() {
       });
     });
 
-    it('should define login function', function() {
-      expect(typeof $scope.login).toBe('function');
+    it('should define signInWithProvider function', function() {
+      expect(typeof $scope.signInWithProvider).toBe('function');
     });
 
   });
