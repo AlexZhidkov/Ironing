@@ -11,11 +11,11 @@
 
         }
     ]);
-    
-  app.factory('orderList', ['fbutil', '$firebaseArray', function(fbutil, $firebaseArray) {
-    var ref = fbutil.ref('orders').limitToLast(50);
-    return $firebaseArray(ref);
-  }]);
+
+    app.factory('orderList', ['fbutil', '$firebaseArray', function(fbutil, $firebaseArray) {
+        var ref = fbutil.ref('orders').limitToLast(50);
+        return $firebaseArray(ref);
+    }]);
 
 
     app.config(['$routeProvider', function($routeProvider) {

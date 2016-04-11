@@ -3,10 +3,11 @@
 
     var app = angular.module('app.orderItem', ['ngMaterial']);
 
-    function OrderItem($mdDialog) {
+    function OrderItem($mdDialog, driverList) {
         var vm = this;
         vm.openMenu = openMenu;
-        
+        vm.drivers = driverList;
+
         function openMenu($mdOpenMenu, ev) {
             $mdOpenMenu(ev);
         };
@@ -20,5 +21,10 @@
             order: '='
         }
     });
+
+    app.factory('driverList', ['fbutil', '$firebaseArray', function(fbutil, $firebaseArray) {
+        var ref = fbutil.ref('users').orderByChild("role").equalTo('driver');
+        return $firebaseArray(ref);
+    }]);
 
 })();
