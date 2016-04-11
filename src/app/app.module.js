@@ -50,7 +50,7 @@
                             unbind = ub;
                         });
 
-                        $location.path(orderFormRedirectPath);
+                        //$location.path(orderFormRedirectPath);
                     }
                     else {
                         if (unbind) { unbind(); }

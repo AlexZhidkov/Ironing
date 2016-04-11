@@ -1,10 +1,15 @@
 (function() {
     "use strict";
 
-    var app = angular.module('app.orderItem', []);
+    var app = angular.module('app.orderItem', ['ngMaterial']);
 
-    function OrderItem() {
+    function OrderItem($mdDialog) {
         var vm = this;
+        vm.openMenu = openMenu;
+        
+        function openMenu($mdOpenMenu, ev) {
+            $mdOpenMenu(ev);
+        };
     }
 
     app.component('orderItem', {
