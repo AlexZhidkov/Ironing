@@ -27,6 +27,8 @@
         'app.chat',
         'app.layout',
         'app.login',
+        'app.orders',
+        'app.orderItem',
         'app.orderForm'
     ])
 

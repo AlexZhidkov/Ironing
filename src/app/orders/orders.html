@@ -1,18 +1,18 @@
 <div ng-cloak>
-  <md-content>
-    <md-tabs md-dynamic-height md-border-bottom>
-      <md-tab label="mine">
-        <md-content class="md-padding">
-          <h1 class="md-display-2">Assigned to me</h1>
-          <p>List of mine orders here</p>
-        </md-content>
-      </md-tab>
-      <md-tab label="all">
-        <md-content class="md-padding">
-          <h1 class="md-display-2">All orders</h1>
-          <p>List of all orders here</p>
-        </md-content>
-      </md-tab>
-     </md-tabs>
-  </md-content>
+    <md-content>
+        <md-tabs md-dynamic-height md-border-bottom>
+            <md-tab label="mine">
+                <md-content>
+                    <h1 class="md-display-2">Assigned to me</h1>
+                    <order-item ng-repeat="order in vm.orders" order="order"></order-item>
+                </md-content>
+            </md-tab>
+            <md-tab label="all">
+                <md-content>
+                    <h1 class="md-display-2">All orders</h1>
+                    <order-item ng-repeat="order in vm.orders" order="order"></order-item>
+                </md-content>
+            </md-tab>
+        </md-tabs>
+    </md-content>
 </div>
