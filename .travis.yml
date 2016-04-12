@@ -16,8 +16,6 @@ install:
   - npm install -g firebase-tools
 
 after_success:
-  - ls -al
-  - ./deploy1.sh  
   - ./deploy.sh
 
 notifications:
