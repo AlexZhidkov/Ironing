@@ -15,9 +15,8 @@ install:
   - npm install -g firebase-tools
 
 after_success:
-  - ls -R
+  - ls -al
   - deploy.sh
-  - npm run-script coveralls
 
 notifications:
   email:
