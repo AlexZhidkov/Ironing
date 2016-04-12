@@ -1,53 +1,58 @@
-<div ng-controller="Shell as vm" layout="column" layout-fill ng-cloak>
-    <section layout="row" flex>
-        <md-sidenav class="md-sidenav-left md-whiteframe-2dp" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
-            <md-toolbar class="md-theme-indigo">
-                <img src="assets/WLI-Logo-2016-land.jpg" alt="We Love Ironing" height="150">
-            </md-toolbar>
-            <md-content layout-padding>
-                <p hide-md show-gt-md>
-                    <md-list>
-                        <md-list-item>
-                            <a class="md-button md-ink-ripple" href="#/orderForm">Order Form</a>
-                        </md-list-item>
-                        <md-list-item>
-                            <a class="md-button md-ink-ripple" href="#/orders">Orders</a>
-                        </md-list-item>
-                        <md-list-item>
-                            <a class="md-button md-ink-ripple" href="#/clients">Clients</a>
-                        </md-list-item>
-                        <md-list-item>
-                            <a class="md-button md-ink-ripple" href="#/staff">Staff</a>
-                        </md-list-item>
-                        <md-list-item>
-                            <a class="md-button md-ink-ripple" href="#/prices">Prices</a>
-                        </md-list-item>
-                        <md-list-item>
-                            <a class="md-button md-ink-ripple" href="#/profile">Profile</a>
-                        </md-list-item>
-                        <md-list-item>
-                            <a class="md-button md-ink-ripple" href="" ng-click="vm.signOut()">Sign Out</a>
-                        </md-list-item>
-                    </md-list>
-                </p>
-            </md-content>
-        </md-sidenav>
-        <md-content flex layout-padding>
-            <md-toolbar class="md-theme-indigo">
-                <div class="md-toolbar-tools">
-                    <md-button ng-click="vm.toggleLeft()" class="md-icon-button md-primary" hide-gt-md aria-label="Menu">
-                        <i class="material-icons">menu</i>
-                    </md-button>
-                    <h1 class="md-flex">{{vm.title}}</h1>
-                </div>
-            </md-toolbar>
-
-            <div layout-gt-md="column" layout-fill layout-align="top center">
-
-                <div ng-view></div>
-                
-            </div>
-            <div flex></div>
+<section layout-fill ng-controller="Shell as vm" layout="row" ng-controller="Shell as vm" flex ng-cloak>
+    <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-2dp flex-width" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
+        <md-toolbar class="md-theme-indigo">
+            <h1 class="md-toolbar-tools">Navigate to</h1>
+        </md-toolbar>
+        <md-content layout="column" layout-align="start">
+            <p hide-md show-gt-md>
+                <md-list>
+                    <md-list-item md-ink-ripple>
+                        <i class="material-icons">event_note</i>
+                        <a class="menu-item" href="/app/index.html#/orderForm">Order Form</a>
+                    </md-list-item >
+                    <md-list-item md-ink-ripple>
+                        <i class="material-icons">list</i>
+                        <a class="menu-item" href="/orders">Orders</a>
+                    </md-list-item>
+                    <md-list-item md-ink-ripple>
+                        <i class="material-icons">group</i>
+                        <a class="menu-item" href="/clients">Clients</a>
+                    </md-list-item>
+                    <md-list-item md-ink-ripple>
+                        <i class="material-icons">work</i>
+                        <a class="menu-item" href="/staff">Staff</a>
+                    </md-list-item>
+                    <md-list-item md-ink-ripple>
+                        <i class="material-icons">local_atm</i>
+                        <a class="menu-item" href="/prices">Prices</a>
+                    </md-list-item>
+                    <md-list-item md-ink-ripple>
+                        <i class="material-icons">person</i>
+                        <a class="menu-item" href="/profile">Profile</a>
+                    </md-list-item>
+                    <md-list-item md-ink-ripple>
+                        <i class="material-icons">directions_run</i>
+                        <a class="menu-item" href="" ng-click="signOut()">Sign Out</a>
+                    </md-list-item>
+                </md-list>
+            </p>
         </md-content>
-    </section>
-</div>
+    </md-sidenav>
+    <md-content layout="column" flex layout-padding>
+        <md-toolbar class="md-theme-indigo">
+            <div class="md-toolbar-tools">
+                <md-button ng-click="vm.toggleLeft()" class="md-icon-button md-primary" hide-gt-md aria-label="Menu">
+                    <i class="material-icons">menu</i>
+                </md-button>
+                <h1 class="md-flex">{{vm.title}}</h1>
+            </div>
+        </md-toolbar>
+
+        <div layout="column" layout-fill layout-align="top center">
+
+            <div ng-view></div>
+            
+        </div>
+        <div flex></div>
+    </md-content>
+</section>
