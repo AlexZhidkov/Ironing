@@ -37,6 +37,20 @@ body {
   padding: 0;
 }
 
+.flex-width {
+  width: auto;
+}
+
+.menu-item {
+  cursor: pointer;
+  display: block;
+  color: #333;
+  padding-left: 16px;
+  position: relative;
+  text-decoration: none;
+  width: 100%;
+}
+
 p.status {
    color: red;
 }
