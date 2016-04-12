@@ -20,12 +20,7 @@
                 config: {
                     templateUrl: 'app/login/login.html',
                     controller: 'Login',
-                    controllerAs: 'vm',
-                    title: 'login',
-                    settings: {
-                        nav: 4,
-                        content: '<i class="fa fa-login"></i> Login'
-                    }
+                    controllerAs: 'vm'
                 }
             }
         ];
