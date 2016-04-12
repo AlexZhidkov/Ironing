@@ -16,7 +16,9 @@
                     'email': $rootScope.profile.email,
                     'phone': $rootScope.profile.phone,
                     'address': $rootScope.profile.address,
-                    'message': vm.message
+                    'message': vm.message,
+                    'status': 'submitted',
+                    'assignedTo': 'manager'
                 }, function(error) {
                     if (error) {
                         logger.error('Order failed', error, 'Error');

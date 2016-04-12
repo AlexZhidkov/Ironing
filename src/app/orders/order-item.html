@@ -22,8 +22,8 @@
                     <md-button ng-click="vm.openMenu($mdOpenMenu, $event)">Assign Driver</md-button>
                     <md-menu-content width="4">
                         <md-menu-item ng-repeat="driver in vm.drivers">
-                            <md-button ng-click="vm.assignDriver(driver.name)">
-                                {{driver.name}}
+                            <md-button ng-click="vm.assignDriver(driver)">
+                                {{driver.$value}}
                             </md-button>
                         </md-menu-item>
                     </md-menu-content>
