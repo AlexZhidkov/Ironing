@@ -14,7 +14,6 @@
         };
 
         function assignDriver(driver) {
-            console.log(this.order.$id);
             fbutil.ref('orders', this.order.$id, 'status').set('Driver to pickup', done);
             fbutil.ref('orders', this.order.$id, 'assignedToId').set(driver.$id, done);
             fbutil.ref('orders', this.order.$id, 'assignedToName').set(driver.$value, done);
