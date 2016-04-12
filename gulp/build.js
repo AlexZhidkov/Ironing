@@ -84,21 +84,14 @@ gulp.task('other', function () {
 
   return gulp.src([
     path.join(conf.paths.src, '/**/*'),
-    path.join('!' + conf.paths.src, '/assets'),
-    path.join('!' + conf.paths.src, '/**/*.{html,css,js}')
+    path.join('!' + conf.paths.src, '/**/*.{html,css,js,ts}')
   ])
     .pipe(fileFilter)
     .pipe(gulp.dest(path.join(conf.paths.dist, '/')));
 });
 
-gulp.task('assets', function () {
-  return gulp.src(path.join(conf.paths.src, '/assets/**/*'))
-    .pipe($.imagemin({ progressive: true }))
-    .pipe(gulp.dest(path.join(conf.paths.dist, '/assets')));
-})
-
 gulp.task('clean', function () {
-  return $.del([path.join(conf.paths.dist, '/'), path.join(conf.paths.tmp, '/')]);
+  return $.del([path.join(conf.paths.dist, '/'), path.join(conf.paths.tmp, '/partials'), path.join(conf.paths.tmp, '/serve')]);
 });
 
-gulp.task('build', ['html', 'fonts', 'assets', 'other']);
+gulp.task('build', ['html', 'fonts', 'other']);
