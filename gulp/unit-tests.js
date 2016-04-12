@@ -12,7 +12,7 @@ var pathSrcHtml = [
 ];
 
 var pathSrcJs = [
-  path.join(conf.paths.src, '/**/!(*_test).js')
+  path.join(conf.paths.tmp, '/serve/app/index.module.js')
 ];
 
 function runTests (singleRun, done) {
@@ -44,7 +44,7 @@ function runTests (singleRun, done) {
   server.start();
 }
 
-gulp.task('karma', ['scripts'], function (done) {
+gulp.task('karma', ['scripts:test'], function (done) {
   runTests(true, done);
 });
 
@@ -55,6 +55,6 @@ gulp.task('coveralls', ['karma'], function () {
 
 gulp.task('test', ['karma', 'coveralls']);
 
-gulp.task('test:auto', ['watch'], function(done) {
+gulp.task('test:auto', ['scripts:test-watch'], function (done) {
   runTests(false, done);
 });
