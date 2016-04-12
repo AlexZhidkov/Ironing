@@ -17,8 +17,8 @@ install:
 
 after_success:
   - ls -al
-  - deploy1.sh  
-  - deploy.sh
+  - ./deploy1.sh  
+  - ./deploy.sh
 
 notifications:
   email:
