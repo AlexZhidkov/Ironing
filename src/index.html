@@ -23,11 +23,9 @@
 </head>
 
 <body>
-    <div>
-        <div data-ng-include="'app/layout/shell.html'"></div>
-        <div id="splash-page" data-ng-show="false">
-            Loading...
-        </div>
+    <div layout-fill data-ng-include="'app/layout/shell.html'"></div>
+    <div id="splash-page" data-ng-show="false">
+        Loading...
     </div>
     <!-- build:js(src) scripts/vendor.js -->
     <!-- bower:js -->
