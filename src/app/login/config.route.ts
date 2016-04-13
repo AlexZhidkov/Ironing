@@ -1,4 +1,3 @@
-//ToDo AZ doesn't work
 (function() {
     'use strict';
     

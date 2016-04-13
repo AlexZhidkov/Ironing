@@ -9,7 +9,7 @@
 
     function Shell($scope, $timeout, $mdSidenav, config, logger, fbutil, $location, loginRedirectPath) {
         /*jshint validthis: true */
-        var vm = this;        
+        var vm = this;
         vm.title = config.appTitle;
         vm.signOut = signOut;
         vm.toggleLeft = buildDelayedToggler('left');
@@ -18,9 +18,10 @@
 
         function activate() {
         }
-        
+
         function signOut() {
             fbutil.ref().unauth();
+            $location.path('/login');
         }
 
         /**

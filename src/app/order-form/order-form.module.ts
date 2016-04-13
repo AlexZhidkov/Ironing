@@ -1,6 +1,5 @@
-(function () {
+(function() {
     'use strict';
 
-    angular.module('app.orderForm', []);
-
+    angular.module('app.orderForm', ['firebase.utils', 'firebase.auth', 'ngRoute']);
 })();
