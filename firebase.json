@@ -1,6 +1,6 @@
 {
   "firebase": "ironing",
-  "public": "target",
+  "public": "dist",
 
   "headers": [
     {
