@@ -1,4 +1,4 @@
-export interface IPrice {
+/*export interface IPrice {
     name: string;
     price: number;
 }
@@ -12,3 +12,4 @@ export class Price implements IPrice {
         this.price = price;
     }
 }
+*/
