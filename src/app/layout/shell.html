@@ -4,7 +4,7 @@
             <img src="assets/WLI-Logo-2016-land.jpg" alt="We Love Ironing" height="100">
         </md-toolbar>
         <md-content layout="column" layout-align="start">
-            <p show-gt-md>
+            <p show-gt-md ng-show="profile">
                 <md-list>
                     <md-list-item md-ink-ripple>
                         <i class="material-icons">event_note</i>
@@ -41,7 +41,7 @@
     <md-content layout="column" flex layout-padding>
         <md-toolbar class="md-theme-indigo">
             <div class="md-toolbar-tools">
-                <md-button ng-click="vm.toggleLeft()" class="md-icon-button md-primary" hide-gt-md aria-label="Menu">
+                <md-button ng-show="profile" ng-click="vm.toggleLeft()" class="md-icon-button md-primary" hide-gt-md aria-label="Menu">
                     <i class="material-icons">menu</i>
                 </md-button>
                 <h1 class="md-flex">{{vm.title}}</h1>
@@ -49,9 +49,7 @@
         </md-toolbar>
 
         <div layout="column" layout-fill layout-align="top center">
-
             <div ng-view></div>
-            
         </div>
         <div flex></div>
     </md-content>

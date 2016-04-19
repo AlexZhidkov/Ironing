@@ -5,9 +5,10 @@
         .module('app.layout')
         .controller('Shell', Shell);
 
-    Shell.$inject = ['$scope', '$timeout', '$mdSidenav', 'config', 'logger', 'fbutil', '$location', 'loginRedirectPath'];
-
-    function Shell($scope, $timeout, $mdSidenav, config, logger, fbutil, $location, loginRedirectPath) {
+    /**
+     * @ngInject
+     */
+    function Shell($rootScope, $scope, $timeout, $mdSidenav, config, logger, fbutil, $location, loginRedirectPath) {
         /*jshint validthis: true */
         var vm = this;
         vm.title = config.appTitle;
@@ -20,8 +21,9 @@
         }
 
         function signOut() {
+            $rootScope.profile = null;
             fbutil.ref().unauth();
-            $location.path('/login');
+            $location.path(loginRedirectPath);
         }
 
         /**

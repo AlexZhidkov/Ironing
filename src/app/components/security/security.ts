@@ -7,9 +7,9 @@
 
   angular.module('app.security', ['ngRoute', 'firebase.auth', 'app.config'])
 
-    .config(['$routeProvider', function ($routeProvider) {
+    .config(['$routeProvider', 'loginRedirectPath', function ($routeProvider, loginRedirectPath) {
       // routes which are not in our map are redirected to /home
-      $routeProvider.otherwise({redirectTo: '/orderForm'});
+      $routeProvider.otherwise({redirectTo: loginRedirectPath});
     }])
 
   /**
