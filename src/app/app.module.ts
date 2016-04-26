@@ -22,12 +22,12 @@
          */
         'app.config',
         'app.security',
-        'app.home',
         'app.account',
-        'app.chat',
         'app.layout',
         'app.login',
         'app.orders',
+        'app.clients',
+        'app.clientDialog',
         'app.orderItem',
         'app.orderForm'
     ])

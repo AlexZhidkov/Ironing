@@ -1,0 +1,12 @@
+<div ng-hide="vm.clients.length > 0" layout="row" layout-sm="column" layout-align="space-around">
+    <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+</div>
+<md-list ng-cloak>
+    <md-list-item ng-repeat="client in vm.clients" ng-click="vm.showAdvanced(client)" class="noright">
+        <img alt="{{ client.name }}" ng-src="{{ client.imageUrl }}" class="md-avatar" />
+        <span>{{ client.name }} </span>
+        <span>{{ client.phone }} </span>
+        <span>{{ client.email }} </span>
+        <md-checkbox class="md-secondary" ng-model="client.selected"></md-checkbox>
+    </md-list-item>
+</md-list>
