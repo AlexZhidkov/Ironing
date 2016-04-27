@@ -22,7 +22,7 @@
                 'address': $rootScope.profile.address,
                 'message': vm.message,
                 'status': 'submitted',
-                'assignedTo': 'manager'
+                'assignedToId': 'manager'
             }, function(error) {
                 if (error) {
                     logger.error('Order failed', error, 'Error');
