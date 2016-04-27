@@ -9,7 +9,7 @@
             </md-tab>
             <md-tab label="manager">
                 <md-content>
-                    <h1 class="md-display-2">All orders</h1>
+                    <h1 class="md-display-2">Assigned to manager</h1>
                     <order-item ng-repeat="order in vm.orders | filter: {assignedToId: 'manager'}: true" order="order"></order-item>
                 </md-content>
             </md-tab>
