@@ -27,7 +27,6 @@
         'app.login',
         'app.orders',
         'app.clients',
-        'app.clientDialog',
         'app.orderItem',
         'app.orderForm'
     ])
